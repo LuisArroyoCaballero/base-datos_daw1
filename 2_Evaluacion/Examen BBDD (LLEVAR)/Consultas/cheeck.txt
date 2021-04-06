@@ -1,0 +1,17 @@
+CREATE TABLE pilotos(
+id_piloto INT(5) PRIMARY KEY,
+/*dni CHAR(9) NOT NULL,*/
+nombre VARCHAR(5) NOT NULL,
+apellido1 VARCHAR(9) NOT NULL,
+apellido2 VARCHAR(9) NOT NULL,
+pais VARCHAR(6) NOT NULL,
+email VARCHAR(15),
+telefono CHAR(9),
+tipo_piloto VARCHAR(10) CHECK(tipo_piloto='Oficial' AND telefono IS NOT NULL AND email IS NULL
+OR tipo_piloto='Prueba' AND email IS NOT NULL AND telefono IS NULL)
+);
+
+
+
+
+INSERT INTO pilotos(id_piloto, nombre, apellido1, apellido2, pais, tipo_piloto,telefono) VALUES('1','asda','sadas','asd','adsa','Oficial','123456789');
